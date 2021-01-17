@@ -1,5 +1,6 @@
 # FBI
 
+(fork by yogsoy, made to personalise and clean up some features)
 FBI is an open source title manager for the 3DS.
 
 Download: https://github.com/Steveice10/FBI/releases
