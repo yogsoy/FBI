@@ -17,7 +17,7 @@
 #define HTTP_USER_AGENT MAKE_HTTP_USER_AGENT(VERSION_MAJOR, VERSION_MINOR, VERSION_MICRO)
 
 #define HTTP_MAX_REDIRECTS 50
-#define HTTP_TIMEOUT_SEC 15
+#define HTTP_TIMEOUT_SEC 100
 #define HTTP_TIMEOUT_NS ((u64) HTTP_TIMEOUT_SEC * 1000000000)
 
 struct httpc_context_s {
@@ -327,7 +327,7 @@ Result http_download_callback(const char* url, u32 bufferSize, void* userData, R
                 curl_easy_setopt(curl, CURLOPT_BUFFERSIZE, bufferSize);
                 curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "");
                 curl_easy_setopt(curl, CURLOPT_USERAGENT, HTTP_USER_AGENT);
-                curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long) HTTP_TIMEOUT_SEC);
+                //curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long) HTTP_TIMEOUT_SEC);
                 curl_easy_setopt(curl, CURLOPT_MAXREDIRS, (long) HTTP_MAX_REDIRECTS);
                 curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
                 curl_easy_setopt(curl, CURLOPT_FAILONERROR, 1L);
